@@ -3,7 +3,7 @@ const fs = require("fs");
    
 http.createServer(function(request, response){
        
-    let filePath = "../html/index.html";
+    let filePath = "html/index.html";
     if(request.url !== "/"){
         filePath = request.url.substr(1);
     }
