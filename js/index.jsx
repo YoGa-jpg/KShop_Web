@@ -4,8 +4,15 @@ const btnStyle = {
 };
 
 class CategoryButton extends React.Component {
+    constructor(props) {
+        super(props);
+        this.press = this.press.bind(this);
+    }
+    press(age, name){
+        alert('Pressed!' + age + name);
+    }
     render() {
-        return <a style={btnStyle} class="generalbutton" href="#">{this.props.name}</a>;
+        return <a style={btnStyle} class="generalbutton" href="#" onClick={() => this.press(18, 'afaf')}>{this.props.name}</a>;
     }
 }
 const elements = [<CategoryButton name="Telefony"/>, <CategoryButton name="Komputery"/>,
