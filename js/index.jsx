@@ -1,26 +1,39 @@
-const firstButton = {
+const btnStyle = {
     width: 150,
-    height: 25,
-    marginLeft: 150
+    height: 25
 };
-const secondButton = {
-    width: 150,
-    height: 25,
-    marginLeft: 450
-};
+
+class CategoryButton extends React.Component {
+    constructor(props) {
+        super(props);
+        this.press = this.press.bind(this);
+    }
+    press(age, name){
+        alert('Pressed!' + age + name);
+    }
+    render() {
+        return <a style={btnStyle} class="generalbutton" href="#" onClick={() => this.press(18, 'afaf')}>{this.props.name}</a>;
+    }
+}
+const elements = [<CategoryButton name="Telefony"/>, <CategoryButton name="Komputery"/>,
+    <CategoryButton name="Laptopy"/>, <CategoryButton name="Сzęści komputera"/>];
+
 ReactDOM.render(
-    <a style={firstButton} class="generalbutton" href="#">1</a>,
-    document.getElementById("btnContainer")
+    elements[0],
+    document.getElementById("btnContainer1")
 );
+
 ReactDOM.render(
-    <a style={secondButton} class="generalbutton" href="#">2</a>,
-    document.getElementById("btnContainer")
+    elements[1],
+    document.getElementById("btnContainer2")
 );
-// ReactDOM.render(
-//     <a style={thirdButton} class="generalbutton" href="#">3</a>,
-//     document.getElementById("btnContainer")
-// );
-// ReactDOM.render(
-//     <a style={fourthButton} class="generalbutton" href="#">4</a>,
-//     document.getElementById("btnContainer")
-// );
+
+ReactDOM.render(
+    elements[2],
+    document.getElementById("btnContainer3")
+);
+
+ReactDOM.render(
+    elements[3],
+    document.getElementById("btnContainer4")
+);
