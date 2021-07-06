@@ -1,0 +1,22 @@
+.glass-button {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    padding: 12px 24px;
+    border: 0;
+    text-decoration: none;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(30px);
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    z-index: 200;
+  }
+ 
+  .glass-button:hover {
+    background-color: rgba(255,255,255,0.2);
+  }

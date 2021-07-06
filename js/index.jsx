@@ -12,7 +12,7 @@ class CategoryButton extends React.Component {
         alert('Pressed!' + age + name);
     }
     render() {
-        return <a style={btnStyle} class="generalbutton" href="#" onClick={() => this.press(18, 'afaf')}>{this.props.name}</a>;
+        return <a style={btnStyle} class="glass-button" href="#" onClick={() => this.press(18, 'afaf')}>{this.props.name}</a>;
     }
 }
 
@@ -50,7 +50,7 @@ const elements = [
     <CategoryButton name="Telefony"/>,
     <CategoryButton name="Komputery"/>,
     <CategoryButton name="Laptopy"/>, 
-    <CategoryButton name="Сzęści komputera"/>
+    <CategoryButton name="Сzęści"/>
 ];
 
 // const goods = [
