@@ -1,11 +1,3 @@
-.generalbody{
-    position: absolute;
-    width: 1440px;
-    height: 1506px;
-
-    background: #3D1B75;
-}
-
 .generaldiv{
     position: absolute;
     z-index: 0;
@@ -13,11 +5,25 @@
     width: 1290px;
     height: 1500px;
     left: 75px;
-    top: 184px;
+    top: 40%;
 
-    background: #6D33B8;
-    box-shadow: inset 0px 4px 65px 17px rgba(56, 36, 55, 0.51);
-    border-radius: 100px;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
+    border-radius: 25px;
+
+    /* display: grid;
+    grid-template-columns: 400px 400px 100px;
+    grid-gap: 30px; */
+
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: 500px 500px;
+}
+
+.good{
+    margin: 50px;
+    height: 200px;
 }
 
 .generalbutton{
@@ -44,5 +50,5 @@
 }
 
 body{
-    background: #3D1B75;
+    background-image: url('https://img5.goodfon.ru/wallpaper/nbig/9/23/synth-retrowave-synthwave-fon-new-retro-wave-sintveiv-ret-16.jpg');
 }
