@@ -1,7 +1,14 @@
+alert("called");
+
 const btnStyle = {
     width: 150,
     height: 25
 };
+
+const inputStyle = {
+    width: 24 + 'rem',
+    textAlign: 'left'
+}
 
 class CategoryButton extends React.Component {
     constructor(props) {
@@ -13,6 +20,50 @@ class CategoryButton extends React.Component {
     }
     render() {
         return <a style={btnStyle} class="glass-button" href="#" onClick={() => this.press(18, 'afaf')}>{this.props.name}</a>;
+    }
+}
+
+class BasketButton extends React.Component {
+    constructor(props) {
+        super(props);
+        this.press = this.press.bind(this);
+    }
+    press(count){
+        alert("Товаров " + count);
+    }
+    render() {
+        return <a style={btnStyle} class="glass-button" href="#" onClick={() => this.press(3)}>{this.props.name}</a>
+    }
+}
+
+class LoginButton extends React.Component {
+    constructor(props) {
+        super(props);
+        this.press = this.press.bind(this);
+    }
+    press(){
+        alert("PRESSED!");
+    }
+    render() {
+        return <a style={btnStyle} class="glass-button" href={this.props.url} onClick={() => this.press()}>{this.props.name}</a>
+    }
+}
+
+class SearchField extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return <input style={inputStyle} class="glass-button" href="#" placeholder={this.props.placeholder} name={this.props.name}></input>
+    }
+}
+
+class NeonText extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return <h1 class="neonText">{this.props.name}</h1>
     }
 }
 
@@ -50,83 +101,45 @@ const elements = [
     <CategoryButton name="Telefony"/>,
     <CategoryButton name="Komputery"/>,
     <CategoryButton name="Laptopy"/>, 
-    <CategoryButton name="Сzęści"/>
 ];
 
-// const goods = [
-//     new Good('https://lmt.mstatic.lv/devices/images/700x980/Apple_iPhone_11_Pro_64GB90442.png', 'Apple iPhone 11 Pro', 'Apple iOS, 5,8" ekran OLED (1125x2436), Apple A13 Bionic, 4 GB RAM, 64 GB pamięci flash, aparat 12 MP, bateria 3190 mAh, 1 karta SIM'),
-//     new Good('https://lmt.mstatic.lv/devices/images/700x980/Apple_iPhone_11_Pro_64GB90442.png', 'Apple iPhone 11 Pro', 'Apple iOS, 5,8" ekran OLED (1125x2436), Apple A13 Bionic, 4 GB RAM, 64 GB pamięci flash, aparat 12 MP, bateria 3190 mAh, 1 karta SIM'),
-//     new Good('https://lmt.mstatic.lv/devices/images/700x980/Apple_iPhone_11_Pro_64GB90442.png', 'Apple iPhone 11 Pro', 'Apple iOS, 5,8" ekran OLED (1125x2436), Apple A13 Bionic, 4 GB RAM, 64 GB pamięci flash, aparat 12 MP, bateria 3190 mAh, 1 karta SIM'),
-//     new Good('https://lmt.mstatic.lv/devices/images/700x980/Apple_iPhone_11_Pro_64GB90442.png', 'Apple iPhone 11 Pro', 'Apple iOS, 5,8" ekran OLED (1125x2436), Apple A13 Bionic, 4 GB RAM, 64 GB pamięci flash, aparat 12 MP, bateria 3190 mAh, 1 karta SIM'),
-//     new Good('https://lmt.mstatic.lv/devices/images/700x980/Apple_iPhone_11_Pro_64GB90442.png', 'Apple iPhone 11 Pro', 'Apple iOS, 5,8" ekran OLED (1125x2436), Apple A13 Bionic, 4 GB RAM, 64 GB pamięci flash, aparat 12 MP, bateria 3190 mAh, 1 karta SIM'),
-// ]
 const goods = [
-    <Card />
+    <Card/>
 ]
 
-function Initialize(){
-    for(var i = 0; i < goods.length; i++)
-    {
-        ReactDOM.render(
-            goods[i],
-            getElementById("good1"),
-        )
-    }
+for(let i = 0; i < elements.length; i++) {
+    ReactDOM.render(
+        elements[i],
+        document.getElementById("btnContainer" + (i + 1))
+    )
+}
+
+for(let i = 1; i < 8; i++)
+{
+    ReactDOM.render(
+        goods[0],
+        document.getElementById("good"+ i)
+    )
 }
 
 ReactDOM.render(
-    elements[0],
-    document.getElementById("btnContainer1")
-);
-
-ReactDOM.render(
-    elements[1],
-    document.getElementById("btnContainer2")
-);
-
-ReactDOM.render(
-    elements[2],
-    document.getElementById("btnContainer3")
-);
-
-ReactDOM.render(
-    elements[3],
+    <BasketButton name="Kosz"/>,
     document.getElementById("btnContainer4")
-);
-
-ReactDOM.render(
-    goods[0],
-    document.getElementById("good1")
 )
 
 ReactDOM.render(
-    goods[0],
-    document.getElementById("good2")
+    <LoginButton name="wejscie" url="html\login.html"/>,
+    document.getElementById("loginContainer")
 )
 
 ReactDOM.render(
-    goods[0],
-    document.getElementById("good3")
+    <SearchField placeholder="szukaj"/>,
+    document.getElementById("searchbarContainer")
 )
 
 ReactDOM.render(
-    goods[0],
-    document.getElementById("good4")
-)
-
-ReactDOM.render(
-    goods[0],
-    document.getElementById("good5")
-)
-
-ReactDOM.render(
-    goods[0],
-    document.getElementById("good6")
-)
-
-ReactDOM.render(
-    goods[0],
-    document.getElementById("good7")
+    <NeonText name="KeyShop"/>,
+    document.getElementById("logoContainer")
 )
 
 Initialize();
