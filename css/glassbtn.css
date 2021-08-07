@@ -1,5 +1,6 @@
 .glass-button {
     position: absolute;
+    width: 100%;
     display: inline-block;
     text-align: center;
     padding: 12px 24px;

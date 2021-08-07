@@ -16,7 +16,6 @@
         font-family: Comic Sans MS, Comic Sans, cursive	;
   }
   
-  /* Flickering animation */
   @keyframes flicker {
       
     0%, 18%, 22%, 25%, 53%, 57%, 100% {

@@ -1,5 +1,6 @@
 const inputStyle = {
     width: 100 + '%',
+    boxSizing: 'border-box',
     textAlign: 'left',
     fontFamily: 'Geneva, Arial, Helvetica, sans-serif',
     cursor: 'text'

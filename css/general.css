@@ -2,7 +2,7 @@
     position: absolute;
     z-index: 0;
 
-    min-width: 80%;
+    min-width: 90%;
 
     width: 92%;
     height: 1600px;
@@ -18,9 +18,9 @@
     grid-gap: 30px; */
 
     display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
-  gap: 0px;
-  grid-auto-rows: 500px 500px;
+    grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
+    gap: 0px;
+    grid-auto-rows: 500px 500px;
 }
 
 .good{
