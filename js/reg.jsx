@@ -1,5 +1,3 @@
-// import {inputStyle, buttonStyle, NeonText, SearchField, LoginButton} from 'reg.jsx'
-
 const inputStyle = {
     width: 100 + '%',
     boxSizing: 'border-box',
@@ -14,17 +12,6 @@ const buttonStyle = {
     align: 'center',
     fontFamily: 'Geneva, Arial, Helvetica, sans-serif',
     marginLeft: 10 + '%'
-}
-
-const refStyle = {
-    position: 'relative',
-    textAlign: 'center',
-    fontSize: 12,
-    marginLeft: 43   + '%',
-    textDecoration: 'none',
-    textTransform: 'uppercase',
-    color: 'white',
-    fontFamily: 'Geneva, Arial, Helvetica, sans-serif'
 }
 
 class NeonText extends React.Component {
@@ -56,27 +43,54 @@ class LoginButton extends React.Component {
     }
 }
 
+var personChildren = document.getElementById("personContainer").children;
+var contactChildren = document.getElementById("contactContainer").children;
+var securityChildren = document.getElementById("securityContainer").children;
+
+var personFields = [
+    <SearchField placeholder="имя"/>,
+    <SearchField placeholder="фамилия"/>,
+    <SearchField placeholder="отчество"/>
+]
+var contactFields = [
+    <SearchField placeholder="улица"/>,
+    <SearchField placeholder="дом"/>,
+    <SearchField placeholder="квартира"/>,
+    <SearchField placeholder="e-mail"/>
+]
+var securityFields = [
+    <SearchField placeholder="пароль"/>,
+    <SearchField placeholder="повторите пароль"/>
+]
+
 ReactDOM.render(
     <NeonText name="KeyShop"/>,
     document.getElementById("logoContainer")
 )
-
 ReactDOM.render(
-    <SearchField placeholder="email"/>,
-    document.getElementById("emailContainer")
+    <LoginButton name="регистрация"/>,
+    document.getElementById("regButtonContainer")
 )
-
 ReactDOM.render(
-    <SearchField placeholder="пароль"/>,
-    document.getElementById("passwordContainer")
-)
-
-ReactDOM.render(
-    <LoginButton name="вход"/>,
+    <a style={inputStyle} href="login.html">вход</a>,
     document.getElementById("loginButtonContainer")
 )
 
-ReactDOM.render(
-    <a style={refStyle} class="simple-ref" href="reg.html">регистрация</a>,
-    document.getElementById("regButtonContainer")
-)
+for(let i = 0; i < personChildren.length; i++) {
+    ReactDOM.render(
+        personFields[i],
+        personChildren[i]
+    )
+}
+for(let i = 0; i < contactFields.length; i++) {
+    ReactDOM.render(
+        contactFields[i],
+        contactChildren[i]
+    )
+}
+for(let i = 0; i < securityFields.length; i++) {
+    ReactDOM.render(
+        securityFields[i],
+        securityChildren[i]
+    )
+}
