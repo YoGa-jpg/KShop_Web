@@ -22,14 +22,6 @@ class NeonText extends React.Component {
         return <h1 class="neonText">{this.props.name}</h1>
     }
 }
-// class SearchField extends React.Component {
-//     constructor(props) {
-//         super(props);
-//     }
-//     render() {
-//         return <input style={inputStyle} class="glass-button" href="#" placeholder={this.props.placeholder} name={this.props.name}></input>
-//     }
-// }
 class LoginButton extends React.Component {
     constructor(props) {
         super(props);
@@ -80,7 +72,7 @@ class SignUpForm extends React.Component {
             Password: this.state.pass
         })
         var request = XMLHttpRequest();
-        request.open("POST", "https://localhost:44309/api/sign/signup");
+        request.open("POST", "https://localhost:44309/api/sign/");
         request.setRequestHeader("Content-type", "application/json; charset=utf-8");
         request.onreadystatechange = function() {
             alert("slava");
@@ -128,35 +120,10 @@ class SignUpForm extends React.Component {
         </form>
     }
 }
-
-// var personChildren = document.getElementById("personContainer").children;
-// var contactChildren = document.getElementById("contactContainer").children;
-// var securityChildren = document.getElementById("securityContainer").children;
-
-// var personFields = [
-//     <SearchField placeholder="имя"/>,
-//     <SearchField placeholder="фамилия"/>,
-//     <SearchField placeholder="отчество"/>
-// ]
-// var contactFields = [
-//     <SearchField placeholder="улица"/>,
-//     <SearchField placeholder="дом"/>,
-//     <SearchField placeholder="квартира"/>,
-//     <SearchField placeholder="e-mail"/>
-// ]
-// var securityFields = [
-//     <SearchField placeholder="пароль"/>,
-//     <SearchField placeholder="повторите пароль"/>
-// ]
-
 ReactDOM.render(
     <NeonText name="KeyShop" />,
     document.getElementById("logoContainer")
 )
-// ReactDOM.render(
-//     <LoginButton name="регистрация"/>,
-//     document.getElementById("regButtonContainer")
-// )
 ReactDOM.render(
     <a style={inputStyle} href="login.html">вход</a>,
     document.getElementById("loginButtonContainer")
@@ -165,21 +132,3 @@ ReactDOM.render(
     <SignUpForm />,
     document.getElementById("formContainer")
 )
-// for(let i = 0; i < personChildren.length; i++) {
-//     ReactDOM.render(
-//         personFields[i],
-//         personChildren[i]
-//     )
-// }
-// for(let i = 0; i < contactFields.length; i++) {
-//     ReactDOM.render(
-//         contactFields[i],
-//         contactChildren[i]
-//     )
-// }
-// for(let i = 0; i < securityFields.length; i++) {
-//     ReactDOM.render(
-//         securityFields[i],
-//         securityChildren[i]
-//     )
-// }
